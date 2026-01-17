@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KL8-Supreme-Quant V5.3 | 极客全维量化工作站</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #020617;
+            --surface: #0f172a;
+            --border: #1e293b;
+            --accent-green: #10b981;
+            --accent-blue: #0ea5e9;
+        }
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: var(--bg-dark);
+            color: #f1f5f9;
+            overflow: hidden;
+            font-size: 13px; /* 专业紧凑字号 */
+        }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        
+        .quant-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 4px; /* 极客风小圆角 */
+            position: relative;
+        }
+
+        .scroll-v::-webkit-scrollbar { width: 3px; }
+        .scroll-v::-webkit-scrollbar-thumb { background: #334155; }
+
+        .btn-number {
+            transition: all 0.1s;
+        }
+        .btn-number.active {
+            background: var(--accent-green) !important;
+            color: #000 !important;
+            font-weight: 900;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 6px;
+        }
+        
+        /* 九宫格特殊背景 */
+        .nine-palace-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--border);
+        }
+        .nine-palace-cell {
+            background: var(--surface);
+            padding: 4px;
+            text-align: center;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0",
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
