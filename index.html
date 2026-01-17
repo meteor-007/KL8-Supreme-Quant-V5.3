@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KL8-Supreme-Quant V5.3 | 极客全维量化工作站</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-dark: #020617;
@@ -20,49 +20,29 @@
             background-color: var(--bg-dark);
             color: #f1f5f9;
             overflow: hidden;
-            font-size: 13px; /* 专业紧凑字号 */
+            font-size: 14px; /* 统一上调基础字号 */
         }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
         
-        .quant-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 4px; /* 极客风小圆角 */
-            position: relative;
+        /* 深度优化的滚动条 */
+        .scroll-v::-webkit-scrollbar { width: 6px; }
+        .scroll-v::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.5); }
+        .scroll-v::-webkit-scrollbar-thumb { 
+            background: #334155; 
+            border-radius: 10px;
         }
+        .scroll-v::-webkit-scrollbar-thumb:hover { background: #475569; }
 
-        .scroll-v::-webkit-scrollbar { width: 3px; }
-        .scroll-v::-webkit-scrollbar-thumb { background: #334155; }
+        /* 隐藏默认滚动条但保持可滚动 */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-        .btn-number {
-            transition: all 0.1s;
+        /* 动画增强 */
+        @keyframes pulse-soft {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
         }
-        .btn-number.active {
-            background: var(--accent-green) !important;
-            color: #000 !important;
-            font-weight: 900;
-        }
-
-        .status-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            display: inline-block;
-            margin-right: 6px;
-        }
-        
-        /* 九宫格特殊背景 */
-        .nine-palace-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-            background: var(--border);
-        }
-        .nine-palace-cell {
-            background: var(--surface);
-            padding: 4px;
-            text-align: center;
-        }
+        .animate-pulse-soft { animation: pulse-soft 2s infinite ease-in-out; }
     </style>
 <script type="importmap">
 {
